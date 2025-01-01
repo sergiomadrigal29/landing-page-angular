@@ -1,0 +1,26 @@
+<div class="centrar">
+  <div
+    class="card"
+    style="width: 35rem; box-shadow: 0 0 10px rgba(0, 0, 0, 0.4)"
+  >
+    <ng-container *ngIf="!loanding">
+      <div class="text-center">
+        <img
+          [src]="product?.image"
+          alt="{{ product?.title }}"
+          class="card-img-top"
+        />
+      </div>
+      <h3 class="text-center">Product: {{ product?.title }}</h3>
+      <h4 class="text-center" [ngStyle]="{ color: color }">
+        Price: {{ product?.price | currency }}
+      </h4>
+      <h4 class="text-center" *ngIf="product?.description">
+        Description: {{ product?.description }}
+      </h4>
+    </ng-container>
+    <ng-container *ngIf="loanding">
+      <i style="color: blue">Cargando información...</i>
+    </ng-container>
+  </div>
+</div>
